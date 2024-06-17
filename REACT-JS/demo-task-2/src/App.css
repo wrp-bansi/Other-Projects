@@ -1,0 +1,30 @@
+:root{
+  --font-family:  "Poppins", Arial, sans-serif;
+  --font-size:12px;
+  --white:#ffffff;
+}
+
+
+body {background: #ebe0dd;background: -webkit-linear-gradient(to right, #ebe3e0, #f1f3f8);background: linear-gradient(to right, rgb(245, 241, 241), white);min-height: 100vh;padding: 20px;}
+/* card */
+.text{font-family: var(--font-family);font-weight: 600;color: rgb(158, 157, 157);font-size: var(--font-size);text-align: center;}
+.header-text{font-family:var(--font-family);font-weight:bolder;}
+.team{padding: 15px 80px 15px 80px;box-shadow:0px 1px 0px 1px rgb(219, 217, 217);width: 100%;border-top: 1px solid rgb(219, 217, 217);}
+.ibox{border: 1px ridge rgb(228, 223, 223);padding: 5px 10px;margin-left: 15px;font-size: 20px;border-radius: 5px;background-color: var(--white);font-weight: 700; font-size: 15px;}
+.btne{color: white;background-color:rgb(245, 161, 6);border-radius: 50px;border: none;padding: 5px 8px;margin-left: 12px;margin-right: 20px; font-size: 14px;}
+.btnf{color: var(--white);background-color:rgb(245, 161, 6);border-radius: 50px;border: none;width: 25%;padding: 7px 0px; font-weight: bold;}
+.icon-1 {
+  color: red;
+  text-shadow: 2px 2px 2px orange;
+}
+
+/* form */
+.mod{padding: -50px -100px}
+.for{border-radius: 5px;background-color: var(--white);}
+.ftext{font-family: var(--font-family); font-size: 14px; color: black; font-weight: 600; float: left;}
+.dd{float: left;}
+.star{color: red;font-size: 5px;float: left;margin-top: 10px;margin-left: 1px;}
+.etext{font-family: var(--font-family);color: red;}
+.fa-copy{float: left; margin-top: -13px; margin-left: -78px; font-size: 15px;}
+
+

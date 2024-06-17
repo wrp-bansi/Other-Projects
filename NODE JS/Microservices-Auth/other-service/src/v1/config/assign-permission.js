@@ -1,0 +1,46 @@
+
+const BACKUP = {
+  GET: 21
+};
+
+const POST = {
+  GET: 23,
+  CREATE: 24,
+  UPDATE: 25,
+  DELETE: 26
+};
+
+const POST_CATEGORY = {
+  GET: 28,
+  CREATE: 29,
+  UPDATE: 30,
+  DELETE: 31
+};
+
+const POST_TYPES = {
+  GET: 33,
+  CREATE: 34,
+  UPDATE: 35,
+  DELETE: 36
+};
+
+const SETTING = {
+  GET: 38,
+  CREATE: 39,
+  UPDATE: 40,
+  DELETE: 41
+};
+
+const ACTIVITY_LOGS = {
+  GET: 91,
+  CREATE: 92,
+  DELETE: 93
+};
+
+const HERO_SLIDERS = {
+  GET: 121,
+  CREATE: 122,
+  UPDATE: 123,
+  DELETE: 124
+};
+module.exports = {BACKUP, POST, POST_CATEGORY,POST_TYPES,SETTING,ACTIVITY_LOGS,HERO_SLIDERS};

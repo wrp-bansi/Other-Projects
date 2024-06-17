@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You For Your Order</title>
+    <style>
+        :root {
+            --background-color: #f9f9f9;
+            --text-color: #333333;
+            --header-background-color: #007bff;
+            --header-text-color: #ffffff;
+            --table-header-color: #f2f2f2;
+            --footer-background-color: #f8f8f8;
+
+            --container-max-width: 600px;
+            --container-padding: 20px;
+            --container-border-radius: 10px;
+            --container-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            --container-overflow: hidden;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: var(--container-max-width);
+            margin: auto;
+            padding: var(--container-padding);
+            border-radius: var(--container-border-radius);
+            box-shadow: var(--container-box-shadow);
+            overflow: var(--container-overflow);
+            background-color: var(--background-color);
+        }
+
+        .header-bg {
+            background-color: var(--header-background-color);
+            color: var(--header-text-color);
+            padding: var(--container-padding);
+            text-align: center;
+            border-top-left-radius: var(--container-border-radius);
+            border-top-right-radius: var(--container-border-radius);
+        }
+
+        .content-bg {
+            padding: var(--container-padding);
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--table-header-color);
+        }
+
+        .footer {
+            background-color: var(--footer-bg-color);
+            padding: var(--container-padding);
+            text-align: center;
+            border-bottom-left-radius: var(--border-radius);
+            border-bottom-right-radius: var(--border-radius);
+        }
+
+        @media screen and (max-width: 600px) {
+            body {
+                font-size: 14px;
+            }
+
+            .container {
+                padding: 10px;
+                box-shadow: none;
+            }
+
+            .header-bg,
+            .footer-bg {
+                padding: 15px;
+            }
+
+            .content-bg {
+                padding: 15px;
+            }
+
+            th,
+            td {
+                padding: 10px;
+            }
+
+            .section {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header-bg">
+            <h1>Thank You For Your Order</h1>
+        </div>
+        <div class="content-bg">
+            <div class="section order-details">
+                <h2>Order Details</h2>
+                <table>
+                    <tr>
+                        <th>Order No:</th>
+                        <td>{orderId}</td>
+                    </tr>
+                    <tr>
+                        <th>Order Date:</th>
+                        <td>{orderDate}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="section products">
+                <h2>Products</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product ID</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {orderItems}
+                    </tbody>
+                </table>
+            </div>
+            <div class="section order-summary">
+                <h2>Order Summary</h2>
+                <table>
+                    <tr>
+                        <th>Shipping Address</th>
+                        <td>{shippingAddress}</td>
+                    </tr>
+                    <tr>
+                        <th>Billing Address</th>
+                        <td>{billingAddress}</td>
+                    </tr>
+                    <tr>
+                        <th>Total</th>
+                        <td>{orderAmount}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="footer">
+            <p>If you need further assistance, please don't hesitate to contact us.</p>
+            <p>Best regards,</p>
+            <p>Team</p>
+            <div>
+
+</body>
+
+</html>

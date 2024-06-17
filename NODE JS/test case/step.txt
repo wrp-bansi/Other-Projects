@@ -1,0 +1,8 @@
+1.Install Jest:
+
+npm install --save-dev jest
+npx jest jest/jest.test.js
+
+npm install --save-dev mocha chai
+  run this mocha
+  npx mocha --require @babel/register mocha/mocha.test.js

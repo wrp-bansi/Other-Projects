@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Confirmation</title>
+    <style>
+        :root {
+            /* Color variables */
+            --background-color: #f9f9f9;
+            --text-color: #333333;
+            --heading-color: #333333;
+            --table-header-color: #f2f2f2;
+            --header-background-color: #007bff;
+            --header-text-color: #ffffff;
+            --footer-background-color: #f8f8f8;
+
+            /* Font variables */
+            --font-size: 16px;
+
+            /* Container variables */
+            --container-max-width: 600px;
+            --container-padding: 20px;
+            --container-border-radius: 10px;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--container-max-width);
+            margin: auto;
+            padding: var(--container-padding);
+            border-radius: var(--container-border-radius);
+            background-color: var(--background-color);
+            box-sizing: border-box;
+        }
+
+        .header {
+            background-color: var(--header-background-color);
+            color: var(--header-text-color);
+            padding: var(--container-padding);
+            text-align: center;
+            border-top-left-radius: var(--container-border-radius);
+            border-top-right-radius: var(--container-border-radius);
+        }
+
+        .content {
+            padding: var(--container-padding);
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--table-header-color);
+        }
+
+        .footer {
+            background-color: var(--footer-background-color);
+            padding: var(--container-padding);
+            text-align: center;
+            border-bottom-left-radius: var(--container-border-radius);
+            border-bottom-right-radius: var(--container-border-radius);
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+
+            .header,
+            .footer {
+                padding: 15px;
+            }
+
+            .content {
+                padding: 15px;
+            }
+
+            th,
+            td {
+                padding: 8px;
+            }
+
+            .section {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Shipping Confirmation</h2>
+        </div>
+        <div class="content">
+            <p><strong>Hey {username},</strong></p>
+            <p>We’re super excited for you to get your hands on your new purchase, and we know you’ll love it as much as we do. So, we wanted to drop you a quick note to let you know that your order <strong>{orderId}</strong> is on its way!</p>
+            <p>Here’s a quick reminder of what you ordered:</p>
+            <div class="section">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product ID</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {orderItems}
+                    </tbody>
+                </table>
+            </div>
+            <p>And to confirm, it’s being shipped to:</p>
+            <p><strong>{shippingAddress}</strong></p><br>
+            <div>
+                <p>If you need further assistance, please contact us at <a href="mailto:support@example.com"><b>support@example.com</b></a> or call us at <b>123-456-7890</b>.</p>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Thanks again for your support, and enjoy your new purchase!</p>
+            <p><strong>Best wishes,</strong></p>
+            <p>Team</p>
+        </div>
+    </div>
+</body>
+
+</html>

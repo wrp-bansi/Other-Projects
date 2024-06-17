@@ -1,0 +1,108 @@
+:root{
+  --font-family-header: 'Roboto', sans-serif;
+  --font-family-boby: "Poppins", Arial, sans-serif;
+  --Yellow : #fc983c;
+  --Black : #000000;
+  --Gray: rgba(0, 0, 0, 0.4);
+  --White : #ffffff;
+  --Light-White : rgba(255, 255, 255, 0.7);
+  --Body : 16px;
+  --H2 : 40px;
+  --Sub-Heading : 12px;
+  --Button : 14px;
+  --Hero-Title : 60px;
+  --font-familytwo: 'Exo 2', sans-serif;
+  --font-familyone: 'Maven Pro', sans-serif;
+}
+*{margin: 0px; padding:0px; box-sizing: border-box; font-family:var(--font-family-boby);font-size: var(--Body);line-height: 1.8; font-weight: 400;}
+
+/* header section */
+.heroimg{ background-image: url("https://th.bing.com/th/id/OIP.heBBDU-k61Uvt1I4XsB4LgHaEK?rs=1&pid=ImgDetMain"); background-repeat: no-repeat; height: 90%; width: 100%;background-size: cover;padding: 10px 0 135px 0;position: relative;}
+.video-background-content {position: relative;z-index: 2}
+.video-background-overlay {position: absolute;top: 0;left: 0;height: 100%;width: 100%;background-color: black;opacity: 0.5; background-size: cover;}
+.navlogo{letter-spacing: -1px; font-size:20px; color: var(--Yellow);font-weight:800;}
+.navtext{font-size:15px; font-weight:400;}
+.herotext-title{color: var(--White);font-size:var(--Hero-Title); padding-top: 40px;font-weight:200; line-height: 1.1;}
+.herotext-paregraph{color: var(--White); font-size:17px;letter-spacing: 1px; line-height: 1.5;}
+.hero-btn{background-color: var(--Yellow); border-radius: 50%; border: 1px solid black; color: white; padding: 25px 30px; border: none; margin-top: 10px;}
+.hr-lines{position: relative;max-width: 500px;margin: 10% 10px;text-align: center}
+.hr-lines:before{content:" ";display: block;height: 2px;width: 45px;position: absolute;top: 50%;left:2px;background: var(--White);}
+.formcard{margin-left: 25%; margin-top: 29px;}
+.formtextheadig{font-size: 22px; font-weight: 600;}
+.formtext{font-size:var(--Sub-Heading); font-weight: 600;}
+.formtext input{ border-color: rgb(235, 231, 231); outline: none;}
+.btn-color{background-color: var(--Yellow); font-size: var(--Button); color: var(--White); padding: 15px 30px; border-radius: 2px; border: none;}
+::placeholder {color: peachpuff;font-size: 13px;font-family: var(--font-family-boby);text-transform: capitalize;font-weight: 400;}
+
+/* Service section */
+.dropdown button{padding: 10px 19px; text-align: start;}
+.dropdown-text{color: var(--Black); font-weight:600;}
+.drop-icon{color: var(--Yellow); font-size: var(--Sub-Heading);opacity:10; float: right; padding-top: 7px;}
+.invisible { visibility: hidden !important;}
+.drop-btn{background-color: var(--Yellow); font-size:var(--Body); color: var(--White);border-radius: 2px; border: none; width:100%; font-weight: 600;}
+.srviceplaceholde{ color: gray; font-size: 13px; font-family: var(--font-family-boby); text-transform: capitalize; font-weight: 400;}
+
+/* comman -section */
+.bgcolor-services{background-color: var(--White);height:auto;width: 100%;display: flex; align-items:center;padding: 100px 00 40px 00;}
+.coman-text{letter-spacing: 2px;}
+.coman-text p{color: var(--Yellow); letter-spacing: 2px; font-size:var(--Sub-Heading); font-weight:700}
+.coman-text h2{color: black;font-size: var(--H2);font-weight:600;}
+
+
+/* second-services -section */
+.services-icon{color: var(--Yellow); font-size:30px; padding-top: 10px;}
+.services-text{display: inline; padding-left: 15px;font-size:18px; font-weight:500;}
+.services-text-p{font-size:16px;color: rgb(109, 105, 105);}
+
+/* imgesection -section */
+.imagebgcolor{background-color: var(--White); height:auto; margin:00 20px 00 30px; display: flex;align-items: end;}
+.imgbackcolor{background-color: var(--White);  padding: 10px 90px 10px 10px; position: relative; margin-top: -45px; width:25%; height: auto;}
+.card-img-top {width: 100%;height: 15vw;object-fit: cover;}
+.rate{font-size: 24px; font-weight: 300; line-height: 1.1;color: var(--Yellow);}
+.from-day{margin-bottom: 0;padding-left: 10px;}
+.from-day span{font-size: 9px; line-height: 1.2; margin-top: 0; display: block;}
+.cardtext h5{font-weight: 400; font-size: 17px;}
+.cardtext p{color: rgb(184, 180, 180); letter-spacing: 2px; font-size: 12px; font-weight: 500;text-transform: uppercase;}
+.cardbutton{width: 50%; padding:5px 10px 5px 10px; border-color: rgb(252, 252, 252); border-radius: 4px; font-size: var(--Button);outline: none;background-color: var(--White);}
+
+/*website -section */
+.webborder{border: 1px solid var(--Yellow); width:25%; height: auto; border-width: 2px; display: flex; align-items: center;justify-content: center; font-size: var(--H2); padding:20px 40px 20px 40px; }
+.webimg{ background-image: url("https://th.bing.com/th/id/OIP.heBBDU-k61Uvt1I4XsB4LgHaEK?rs=1&pid=ImgDetMain"); background-repeat: no-repeat; height: 100%; width: 100%;background-size: cover;position: relative; padding: 100px;margin-top: 100px;}
+.video-background-content {position: relative;z-index: 2 ; font-family: var(--font-family-boby);}
+.video-background-overlay {position: absolute;top: 0;left: 0;height: 100%;width: 100%;background-color: black;opacity: 0.7; background-size: cover;}
+.webtext{font-size: 18px;}
+.fa-location-dot{font-size: 40px;}
+
+/* teammember section */
+.teamtext-p{color: #666666;}
+.teamtext{color: var(--Yellow); font-size: 20px; font-weight: 500;}
+.teamtextp{color:#cccccc;}
+.circle{color: var(--Yellow);}
+.fa-circle{font-size: 10px;}
+
+/* about section */
+.about{object-fit: cover;}
+.about-text p{color: var(--Yellow); letter-spacing: 2px; font-size: var(--Sub-Heading); font-weight: 700;}
+.aboutp{color: #666666;font-size: var(--Body);}
+.about-text h2{color: black;font-size: var(--H2);font-weight:600;}
+.btnabout-color{background-color: var(--Yellow); font-size: var(--Button); color: var(--White); padding: 9px 20px; border-radius: 2px; border: none;font-weight: 500;}
+
+/* blog section */
+.cardblogtext-p{color:#c7c5c5;; letter-spacing: 2px; font-size: var(--Sub-Heading); font-weight: 500;word-spacing: 1;}
+.cardblogtext h3{font-size: 18px;font-weight: 400;}
+.fa-message{font-size: 10px; }
+
+/* footer section */
+.footerbgcolor{background-color:var(--Black); width: 100%; justify-content: center; display: flex;}
+.fbg{background-color: var(--Black); height: 35vh; width: 100%; padding-top: 5px;}
+.footertext{color: rgba(255, 255, 255, 0.7);}
+.footertext h2{color: var(--White); font-size: 20px; font-weight: normal;}
+.footertext-link{text-decoration: none; color: rgba(255, 255, 255, 0.7); }
+.fab{font-size:25px; color: var(--White);}
+
+/* header section */
+@media only screen and (max-width: 600px) {
+  .formcard{margin-left: 10%; margin-top: 29px; margin-right: 10%}
+}
+
+

@@ -1,0 +1,20 @@
+
+const CATEGORY = {
+  GET: 51,
+  CREATE: 52,
+  UPDATE: 53,
+  DELETE: 54
+};
+
+const PRODUCT = {
+  GET: 56,
+  CREATE: 57,
+  UPDATE: 58,
+  DELETE: 59
+};
+
+const PRODUCT_ENQUIRIES = {
+  GET: 134
+};
+
+module.exports = {CATEGORY,PRODUCT,PRODUCT_ENQUIRIES};

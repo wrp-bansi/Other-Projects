@@ -1,0 +1,70 @@
+.header {
+
+  background-color: var(--white);
+  padding: 20px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+.logo {
+  font-size: var(--herofont);
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--black);
+
+}
+
+.logoContainer {
+  display: inline;
+  align-items: center;
+}
+
+.logoImage {
+  margin-right: 10px;
+  margin-top: -10px;
+}
+
+
+.rightBox {
+  float: right;
+  width: 40%;
+  background-color: var(--gray);
+  height: 40px;
+
+}
+
+.rightBox p {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  color: var(--gray1);
+  font-size: var(--headerfont);
+  font-weight: 600;
+  margin-top: 5px;
+
+}
+
+.textdecoration {
+  text-decoration: none;
+  list-style-type: none;
+  color: var(--white);
+  padding: 0 20px;
+}
+
+
+.hideIcon {
+  display: none;
+}
+
+@media screen and (max-width: 728px) {
+
+  .rightBox {
+    display: none;
+    float: none;
+  }
+
+}

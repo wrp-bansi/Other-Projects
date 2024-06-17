@@ -1,0 +1,1 @@
+export const BASE_URL = 'https://freetestapi.com/api/v1/students';

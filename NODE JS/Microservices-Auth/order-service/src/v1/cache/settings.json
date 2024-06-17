@@ -1,0 +1,7 @@
+{
+  "SMS_URL": "http://173.45.76.227/send.aspx?username=simpdemo&pass=simp123&route=trans1&senderid=WELLCM&ispreapproved=1&",
+  "SMTP_HOST": "sandbox.smtp.mailtrap.io",
+  "SMTP_USERNAME": "cbba93d09a9bac",
+  "SMTP_PASSWORD": "2c35c95fee7edb",
+  "commission_percentage": "10"
+}

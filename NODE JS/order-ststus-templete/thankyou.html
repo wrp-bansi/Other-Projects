@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us Form Submission</title>
+  <style>
+    :root {
+            --background-color: #f9f9f9;
+            --text-color: #333333;
+            --header-background-color: #007bff;
+            --container-color: #ffffff;
+            --details-background-color: #f9f9f9;
+            --font-family: 'Roboto', 'Helvetica', sans-serif;
+            --container-max-width: 600px;
+            --container-padding: 20px;
+            --container-border-radius: 10px;
+            --container-box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+    body {
+      font-family:var(--font-family);
+      background-color:var(--background-color);
+      color:var(--text-color);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: var(--container-max-width);
+      margin: 20px auto;
+      padding: var(--container-padding);
+      background-color:var(--container-color);
+      border-radius: 8px;
+      box-shadow: var(--container-box-shadow);
+      border: 1px solid #ddd;
+    }
+    .header {
+      background-color:var(--header-background-color);
+      color: var(--container-color);
+      padding: 10px 20px;
+      text-align: center;
+      border-radius: 8px 8px 0 0;
+    }
+    .header h2 {
+      margin: 0;
+    }
+    .content {
+      padding: var(--container-padding);
+    }
+    .content p {
+      margin: 10px 0;
+    }
+    .details {
+      background-color: var(--details-background-color);
+      padding: 15px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    .details p {
+      margin: 8px 0;
+      line-height: 1.5;
+    }
+    .details p strong {
+      color:var(--text-color);
+    }
+    .footer {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 12px;
+      color: #777;
+      padding: 10px;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h2>Contact Us Form Submission</h2>
+    </div>
+    <div class="content">
+      <p>You have received a new message from the contact us form:</p>
+      <div class="details">
+        <p><strong>First Name:</strong> {firstName}</p>
+        <p><strong>Last Name:</strong> {lastName}</p>
+        <p><strong>Email:</strong> {email}</p>
+        <p><strong>Mobile:</strong> {mobile}</p>
+        <p><strong>Subject:</strong> {subject}</p>
+        <p><strong>Message:</strong></p>
+        <p>{message}</p>
+      </div>
+    </div>
+    <div class="footer">
+      <p>This email was generated automatically. Please do not reply to this email.</p>
+    </div>
+  </div>
+</body>
+</html>

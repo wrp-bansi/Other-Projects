@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Confirmation</title>
+    <style>
+        :root {
+            /* Color variables */
+            --background-color: #f9f9f9;
+            --text-color: #333333;
+            --header-bg-color: #007bff;
+            --header-text-color: #ffffff;
+            --content-bg-color: #ffffff;
+            --footer-bg-color: #f8f8f8;
+            --table-header-color: #f2f2f2;
+            --button-bg-color: #007bff;
+            --button-text-color: #ffffff;
+            --button-hover-color: #0056b3;
+
+            /* Other variables */
+            --container-max-width: 600px;
+            --container-padding: 20px;
+            --border-radius: 10px;
+            --box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: var(--container-max-width);
+            margin: auto;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            background-color: var(--content-bg-color);
+        }
+
+        .header {
+            background-color: var(--header-bg-color);
+            color: var(--header-text-color);
+            padding: var(--container-padding);
+            text-align: center;
+            border-top-left-radius: var(--border-radius);
+            border-top-right-radius: var(--border-radius);
+        }
+
+        .content {
+            padding: var(--container-padding);
+        }
+
+        .footer {
+            background-color: var(--footer-bg-color);
+            padding: var(--container-padding);
+            text-align: center;
+            border-bottom-left-radius: var(--border-radius);
+            border-bottom-right-radius: var(--border-radius);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--button-bg-color);
+            color: var(--button-text-color);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: var(--button-hover-color);
+        }
+
+        .order-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .order-table th,
+        .order-table td {
+            padding: 10px;
+            border: 1px solid #dddddd;
+            text-align: left;
+        }
+
+        .order-table th {
+            background-color: var(--table-header-color);
+        }
+
+        .thank-you {
+            margin-top: 30px;
+            font-style: italic;
+            text-align: center;
+             font-weight: 600;
+             font-size: 20px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                border-radius: 0;
+            }
+
+            .header,
+            .footer {
+                padding: 15px;
+            }
+
+            .content {
+                padding: 15px;
+            }
+
+            .order-table th,
+            .order-table td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Delivery Confirmation</h2>
+        </div>
+        <div class="content">
+            <p>Hello <strong>{username}</strong>,</p>
+            <p>We are pleased to inform you that your order has been successfully delivered.</p>
+            <h3>Delivery Details:</h3>
+            <table class="order-table">
+                <thead>
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Quantity</th>
+                        <th>Unit Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {orderItems}
+                </tbody>
+            </table>
+            <p class="thank-you">Thank you for choosing our services!</p>
+        </div>
+        <div class="footer">
+            <p>If you need further assistance, please don't hesitate to contact us.</p>
+            <p>Best regards,</p>
+            <p>Team</p>
+            <div>
+                <a href="mailto:support@example.com" class="button">Contact Support</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

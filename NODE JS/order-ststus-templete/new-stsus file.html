@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Status Update</title>
+    <link rel="stylesheet" href="./new-stus.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="status-shipped">Your Order Has Been Changed</h1>
+        <p>Hello {{username}},</p>
+        <p>We just wanted to update you on the status of your recent order, [Order Number] you placed on [Order Date] <!-- Include specific order status here --></p>
+        <p> <strong>Current Status:</strong>{{orderStatus}}</p>
+        <p>Your order is {{orderStatus}}, and we are working diligently to get it to you as soon as possible. </p>
+        <p>To track your shipment, please log in to your account.</p>
+        <p>We understand that receiving your purchase on time is important to you, and we want to assure you that we will do our best to meet the estimated delivery date provided. You can track your order progress from your orders screen on our website. If you have any questions or concerns, contact us at [support email/phone number]. We appreciate your patience and support, and we look forward to delivering your order soon. </p>
+        <p>If you have any questions or concerns, please don't hesitate to contact us.</p>
+        <p>Thank you for shopping with us!</p>
+        <div class="footer">
+            <p>Best Regards,<br>The [Company Name] Team</p>
+            <a href="[Link to Your Website]" class="button">Visit Our Website</a>
+        </div>
+    </div>
+</body>
+</html>

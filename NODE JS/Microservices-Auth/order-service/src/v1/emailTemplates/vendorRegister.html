@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Registration Verification</title>
+    <style>
+        /* Reset styles */
+        body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, figcaption, blockquote, dl, dd, dt {
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #ffffff;
+            --body-background-color: #f8f9fa;
+            --text-color: #333333;
+            --btn-background-color: #0056b3;
+            --btn-hover-background-color: #004080;
+            --footer-text-color: #666666;
+            --link-color: #007bff;
+            --link-hover-color: #0056b3;
+            --container-max-width: 600px;
+            --container-padding: 30px;
+            --container-border-radius: 10px;
+            --box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            line-height: 1.6;
+            background-color: var(--body-background-color);
+            padding: 20px;
+            margin: 0;
+        }
+
+        .container {
+            max-width: var(--container-max-width);
+            margin: auto;
+            background: var(--secondary-color);
+            padding: var(--container-padding);
+            border-radius: var(--container-border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            text-align: center;
+            padding: 20px;
+            border-radius: var(--container-border-radius) var(--container-border-radius) 0 0;
+        }
+
+        .header h2 {
+            font-size: 28px;
+            margin: 0;
+        }
+
+        .content {
+            padding: 20px 0;
+        }
+
+        .content p {
+            color: var(--text-color);
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--btn-background-color);
+            color: var(--secondary-color);
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-size: 18px;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--btn-hover-background-color);
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: var(--footer-text-color);
+            text-align: center;
+        }
+
+        .footer a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: var(--link-hover-color);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            .header {
+                border-radius: var(--container-border-radius) var(--container-border-radius) 0 0;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Welcome to Code Bridge!</h2>
+        </div>
+        <div class="content">
+            <p>Dear {Vendor Name},</p>
+            <p>Thank you for registering with us. To complete your registration, please click the button below to verify your account:</p>
+            <p><a href="{VERIFY_ACCOUNT_URL}" class="btn">Verify Account</a></p>
+            <p>If you have any questions, feel free to <a href="mailto:support@yourcompany.com">contact us</a>.</p>
+        </div>
+        <div class="footer">
+            <p>Best regards,<br>Code Bridge Team<br>Need help? <a href="mailto:support@yourcompany.com">Contact Support</a></p>
+        </div>
+    </div>
+</body>
+</html>

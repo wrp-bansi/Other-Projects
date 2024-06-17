@@ -1,0 +1,22 @@
+/* Variables */
+:root {
+  --font-family-body: 'Montserrat', sans-serif;
+  --font-family: 'Poppins', sans-serif;
+  --color: rgb(255, 255, 255);
+  --background-color:rgb(24, 23, 23);
+  --font-size:20px;
+  }
+*{margin: 0; padding: 0;box-sizing: border-box;}
+
+.navtext{font-size:30px; font-weight:700;}
+.nav-li-text{font-size:var(--font-size); font-family: var(--font-family); padding-left: 5px;}
+.nav-li-text:hover{color: pink;}
+.card-title{font-size:30px; font-weight:700;}
+.card-text{font-size: var(--font-size);}
+.card-body img{ min-width: 50%;max-height: 200px;}
+.teammember{max-width: 100%;height: auto;vertical-align: top;}
+
+
+
+
+

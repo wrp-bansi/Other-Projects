@@ -1,0 +1,40 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true // Add ES6 environment support
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended" // Add React recommended rules
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2018, // Set ECMAScript version to support ES6+
+    "sourceType": "module", // Enable module support (import/export)
+    "ecmaFeatures": {
+      "jsx": true // Enable JSX parsing
+    }
+  },
+  "plugins": [
+    "react" // Add React plugin
+  ],
+  "rules": {
+    "quotes": ["error", "single"],
+    // "indent": ["error", 2],
+    "camelcase": ["error", { "properties": "always" }],
+    "no-console": "error",
+    "no-unused-vars": "warn",
+    "eqeqeq": "error",
+    "no-var": "error",
+    "no-else-return": "error"
+    // "require-jsdoc": ["error", {  // Must be required comments on all functions
+    //   "require": {
+    //     "FunctionDeclaration": true,
+    //     "MethodDefinition": true,
+    //     // "ClassDeclaration": true,
+    //     "ArrowFunctionExpression": true,
+    //     "FunctionExpression": true
+    //   }
+    // }]
+  }
+}

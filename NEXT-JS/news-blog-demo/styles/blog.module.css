@@ -1,0 +1,96 @@
+.herofont {
+  font-size: 17px;
+  margin: 0 0 10px 0;
+  font-weight: bold;
+  text-decoration: none;
+  text-decoration: none !important;
+  color: var(--black);
+}
+
+.herfonts {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0 0 20px 0;
+  text-decoration: none !important;
+  color: var(--black);
+}
+
+.icon {
+  font-size: var(--icon);
+  letter-spacing: 1px;
+  margin: 0 0 20px 0;
+  color: var(--gray1);
+}
+
+.parcolor {
+  color: var(--gray1);
+}
+
+.squareimage {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+
+.a {
+  color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+  text-decoration: none;
+}
+
+.squareimagesmall {
+  width: 100%;
+  height: 75px;
+  object-fit: cover;
+}
+
+.btnprimary {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color:var(--red)
+}
+
+.buttonContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.redButton {
+  background-color: var(--red);
+  color: white;
+  padding: 6px 30px;
+  border: none;
+  border-radius: 1px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.icon {
+  font-size: var(--icon);
+  letter-spacing: 1px;
+}
+
+
+
+
+
+@media (max-width: 576px) {
+  .squareimage {
+    height: 400px;
+    object-fit: cover;
+  }
+}
+
+@media (max-width:738px) {
+  .squareimagesmall {
+
+    height: 300px;
+    object-fit: cover;
+
+  }
+}

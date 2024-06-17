@@ -1,0 +1,994 @@
+{
+	"info": {
+		"_postman_id": "b2d5941d-bcb6-451c-b9db-c79f1720c91d",
+		"name": "Auth Micro Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26012735"
+	},
+	"item": [
+		{
+			"name": "Auth MicroDemo",
+			"item": [
+				{
+					"name": "Check Mobile + Send OTP",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"x-api-key\", jsonData.xApiKey);\r",
+									"postman.setEnvironmentVariable(\"token\", jsonData.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "device_id",
+								"value": "{{deviceId}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mobile\":\"9726782363\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api-gateway}}/auth/verify-mobile-send-otp"
+					},
+					"response": []
+				},
+				{
+					"name": "Verify OTP",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "device_id",
+								"value": "{{deviceId}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mobile\":\"9898989898\",\r\n    \"otp\":\"8746\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api-gateway}}/auth/verify-otp"
+					},
+					"response": []
+				},
+				{
+					"name": "Set Mpin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "device_id",
+								"value": "{{deviceId}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mpin\": \"1234\",\r\n    \"device_name\": \"655\",\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGUiOiI5ODk4OTg5ODk4IiwiZGV2aWNlX2lkIjoiYXNsYXdrczI5MzBlZWRza2xka3NrZGxzYXNhcyIsImlhdCI6MTcwMTE3NDc5MSwiZXhwIjoxNzAxMTc1MDkxfQ.0UGrJ060dKJ0fSPeYolQLyb-y2PO3AgCsvArGOrpQNY\",\r\n    \"device_type\": 0,\r\n    \"firebase_token\": \"dfdff \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api-gateway}}/auth/set-mpin"
+					},
+					"response": []
+				},
+				{
+					"name": "MPIN Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"x-api-key\", jsonData.x_api_key);\r",
+									"postman.setEnvironmentVariable(\"token\", jsonData.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "device_id",
+								"value": "{{deviceId}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mpin\": \"1234\",\r\n    \"mobile\": \"9876543210\",\r\n    \"ip\": \"192.168.0.1\",\r\n    \"mac_address\": \"asasass\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api-gateway}}/auth/mpin-login"
+					},
+					"response": []
+				},
+				{
+					"name": "Send OTP For Forgot Mpin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"x-api-key\", jsonData.xApiKey);\r",
+									"postman.setEnvironmentVariable(\"token\", jsonData.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "device-id",
+								"value": "{{deviceId}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mobile\":\"8000430175\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api-gateway}}/auth/verify-mobile-send-otp"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Forgot Mpin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{x-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "device-id",
+								"value": "{{deviceId}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mpin\":\"2245\",\r\n    \"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGUiOiI4MDAwNDMwMTc1IiwiZGV2aWNlX2lkIjoiYXNsYXdrczI5MzBlZWRza2xka3NrZGwiLCJpYXQiOjE2OTA2MjY2MzIsImV4cCI6MTY5MDYyNjkzMn0.5tiHmo_YoubC962iDe4KgT2Klq59WIHCVZboVINURMg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api-gateway}}/auth/set-mpin"
+					},
+					"response": []
+				},
+				{
+					"name": "Register User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "device_id",
+								"value": "{{deviceId}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@influent.com\",\r\n    \"password\": \"1234\",\r\n    \"firstName\": \"abc\",\r\n    \"lastName\": \"defg\",\r\n    \"mobile\": \"9871236540\",\r\n    \"checkRole\": 1,\r\n    \"isSuperAdmin\": \"yes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api-gateway}}/auth/admin/register-user"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "Get All Role",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x_api_key",
+								"value": "{{x_api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{local}}/role"
+					},
+					"response": []
+				},
+				{
+					"name": "Get One Role",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x_api_key",
+								"value": "{{x_api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{local}}/role/2"
+					},
+					"response": []
+				},
+				{
+					"name": "All Role Permission",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x_api_key",
+								"value": "{{x_api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{local}}/role/role-permission"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x_api_key",
+								"value": "{{x_api_key}}s",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Account Admin\",\n    \"permission\": [\"6,9,12,15\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{local}}/role"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x_api_key",
+								"value": "{{x_api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Student\",   // \n    \"permission\": [\"6,9,12,15\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{local}}/role/3"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x_api_key",
+								"value": "{{x_api_key}}",
+								"type": "text"
+							}
+						],
+						"url": "{{local}}/role/4"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Permission",
+			"item": [
+				{
+					"name": "Get All Permission",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x_api_key",
+								"value": "{{x_api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{local}}/permission"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Permission Pagination",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x_api_key",
+								"value": "{{x_api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/permission/all?currentPage=1&perPage=3&search=Module 2",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"permission",
+								"all"
+							],
+							"query": [
+								{
+									"key": "currentPage",
+									"value": "1"
+								},
+								{
+									"key": "perPage",
+									"value": "3"
+								},
+								{
+									"key": "search",
+									"value": "Module 2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Parent Permission",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x_api_key",
+								"value": "{{x_api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{local}}/permission/parent"
+					},
+					"response": []
+				},
+				{
+					"name": "Get One Permission",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x_api_key",
+								"value": "{{x_api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{local}}/permission/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Permission",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x_api_key",
+								"value": "{{x_api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"\",\n    \"parent\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{local}}/permission"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Permission",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x_api_key",
+								"value": "{{x_api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Head Office Admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{local}}/permission/3"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Permission",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x_api_key",
+								"value": "{{x_api_key}}",
+								"type": "text"
+							}
+						],
+						"url": "{{local}}/permission/5"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admon Login",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"token\", jsonData.token);\r",
+									"postman.setEnvironmentVariable(\"x_api_key\", jsonData.xApiKey);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"email\": \"abc@gmai.com\", \r\n    // \"email\": \"employ@influent.com\", // abc@gmai.com\r\n    \"email\": \"admin@influent.com\", // abc@gmai.com\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api-gateway}}/auth/admin/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x_api_key",
+								"value": "{{x_api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"employ@influent.com\",\r\n    \"password\": \"1234\",\r\n    \"firstName\": \"Michel\",\r\n    \"lastName\": \"Joye\",\r\n    \"mobile\": \"9685741423\",\r\n    \"checkRole\": 1,\r\n    \"isSuperAdmin\": \"yes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api-gateway}}/auth/admin/create"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Login",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x_api_key",
+								"value": "{{x_api_key}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "device_id",
+								"value": "{{deviceId}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"David\",\r\n    \"lastName\": \"Welly\",\r\n    \"email\": \"user@gmail.com\", // abc@gmai.com , user@gmail.com , admin@influent.com\r\n    \"password\": \"123\",\r\n    \"deviceId\": \"{{deviceId}}\",\r\n    \"mobile\": \"9977311550\",\r\n    \"deviceName\": 132,\r\n    \"deviceType\": 0,\r\n    \"ip\": \"192.0.0.1\",\r\n    \"firebaseToken\": \"asasas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api-gateway}}/auth/user/register"
+					},
+					"response": []
+				},
+				{
+					"name": "User Active",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x_api_key",
+								"value": "{{x_api_key}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "device_id",
+								"value": "{{deviceId}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"emailVerificationCode\": 651863,\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwODUxMTA0MSwiZXhwIjoxNzA4NTI5MDQxfQ.XKWFL3PnJUiZIrskEKNbE_ojYb9rfuTDbxPnU2JFj_U\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api-gateway}}/auth/user/active-user"
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x_api_key",
+								"value": "{{x_api_key}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "device_id",
+								"value": "{{deviceId}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"user@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api-gateway}}/auth/user/forgot-password"
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Otp",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x_api_key",
+								"value": "{{x_api_key}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "device_id",
+								"value": "{{deviceId}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"emailVerificationCode\": 570890,\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwiaWF0IjoxNzA4NTExMTgzLCJleHAiOjE3MDg1MjkxODN9.VczcZxlRouwB5zxaPoV3bZNBFpXY3PpZSd5MefRvybw\"  // Token Email\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api-gateway}}/auth/user/verify-otp"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Password",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x_api_key",
+								"value": "{{x_api_key}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "device_id",
+								"value": "{{deviceId}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"456\",\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwiaWF0IjoxNzA4NTExMTgzLCJleHAiOjE3MDg1MjkxODN9.VczcZxlRouwB5zxaPoV3bZNBFpXY3PpZSd5MefRvybw\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api-gateway}}/auth/user/update-password"
+					},
+					"response": []
+				},
+				{
+					"name": "====",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x_api_key",
+								"value": "{{x_api_key}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "device_id",
+								"value": "{{deviceId}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"emailVerificationCode\": 332789,\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcwODQyMDM5OCwiZXhwIjoxNzA4NDM4Mzk4fQ.7T9Z0MB1LUjhwr5raVQElHke3QDRqwIbposDuEOSYXQ\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api-gateway}}/auth/user/active-user"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"token\", jsonData.token);\r",
+									"postman.setEnvironmentVariable(\"x_api_key\", jsonData.xApiKey);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"email\": \"abc@gmai.com\", \r\n    // \"email\": \"employ@influent.com\", // abc@gmai.com\r\n    \"email\": \"admin@influent.com\", // abc@gmai.com\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api-gateway}}/auth/user/login"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

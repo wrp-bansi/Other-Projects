@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Status Change Notification</title>
+    <style>
+        :root {
+            --background-color: #f9f9f9;
+            --text-color: #333333;
+            --header-background-color: #007bff;
+            --header-text-color: #ffffff;
+            --table-header-color: #f2f2f2;
+            --footer-background-color: #f8f8f8;
+
+            --container-max-width: 600px;
+            --container-padding: 20px;
+            --container-border-radius: 10px;
+            --container-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            --container-overflow: hidden;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: var(--container-max-width);
+            margin: auto;
+            padding: var(--container-padding);
+            border-radius: var(--container-border-radius);
+            box-shadow: var(--container-box-shadow);
+            overflow: var(--container-overflow);
+            background-color: var(--background-color);
+        }
+
+        .header-bg {
+            background-color: var(--header-background-color);
+            color: var(--header-text-color);
+            padding: var(--container-padding);
+            text-align: center;
+            border-top-left-radius: var(--container-border-radius);
+            border-top-right-radius: var(--container-border-radius);
+        }
+
+        .content-bg {
+            padding: var(--container-padding);
+        }
+
+        .footer-bg {
+            background-color: var(--footer-background-color);
+            padding: var(--container-padding);
+            text-align: center;
+        }
+
+        .padding-20 {
+            padding: 20px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--header-background-color);
+            color: var(--header-text-color);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .order-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .order-table th,
+        .order-table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .order-table th {
+            background-color: var(--table-header-color);
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+
+            .padding-20 {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-bg text-center padding-20">
+            <h2>Update on Your Order Status</h2>
+        </div>
+        <div class="content-bg padding-20">
+            <p>Hello <strong>{username}</strong>,</p>
+            <p>We hope this email finds you well.</p>
+            <p>We wanted to update you on the status of your recent order No: <strong>{orderId}</strong>, which you placed on <strong>{orderDate}</strong>.</p>
+            <h3>Order Summary:</h3>
+            <table class="order-table">
+                <thead>
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Quantity</th>
+                        <th>Unit Price</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {orderItems}
+                </tbody>
+            </table>
+            <p>Current Status: <strong>{orderStatus}</strong></p>
+            <p>If you have any questions or concerns regarding this update, please feel free to contact our customer support team at <a href="mailto:support@example.com"><b>support@example.com</b></a> or call us at <b>123-456-7890</b>.</p>
+            <p>We're here to assist you every step of the way.</p>
+            <p>Best regards,</p>
+            <p>Team</p>
+        </div>
+        <div class="footer-bg text-center padding-20">
+            <p>If you need further assistance, please don't hesitate to contact us.</p>
+            <a href="mailto:support@example.com" class="button">Contact Support</a>
+        </div>
+    </div>
+</body>
+
+</html>

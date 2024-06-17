@@ -1,0 +1,4 @@
+{
+  "UPLOAD_ENV": "local",
+  "AWS_BUCKET_NAME": ""
+}

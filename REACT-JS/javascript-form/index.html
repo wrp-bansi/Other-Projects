@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="d-flex justify-content-center align-item-center">
+        <div class="card">
+        <article class="card-body mx-auto" style="max-width: 400px;">
+            <form id="formId" action="index.html">
+            <div class=" input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                 </div>
+                <input name="" class="form-control" placeholder="First name" type="text"  id="n1" >
+            </div>
+            <div id="firstname" class="red mb-4"></div>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                 </div>
+                <input name="" class="form-control" placeholder="last name" type="text"  id="n2">
+            </div>
+            <div id="lastname" class="red mb-4"></div>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                 </div>
+                <input name="" class="form-control" placeholder="Email address" type="text"  id="n3">
+            </div>
+            <div id="Email" class="red mb-4"></div>
+
+            <div class=" input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa-solid fa-lock"></i> </span>
+                 </div>
+                <input name="" class="form-control" placeholder="password" type="password"  id="n4">
+            </div>
+            <div id="password" class="red mb-4"></div>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa-solid fa-lock"></i> </span>
+                 </div>
+                <input name="" class="form-control" placeholder="confirm password" type="password"  id="n5">
+            </div>
+            <div id="cpassword" class="red mb-4"></div>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                </div>
+                <select class="custom-select" style="max-width: 120px;">
+                    <option selected="">+91</option>
+                    <option value="1">+92</option>
+                    <option value="2">+1</option>
+                    <option value="3">+7</option>
+                </select>
+                <input name="" class="form-control" placeholder="Phone number" type="text" id="n6">
+            </div>
+            <div id="mnumber" class="red mb-4"></div>
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa-solid fa-person-half-dress"></i> </span>
+                 </div>&nbsp;
+                 <div class="form-check">
+                    <input input class="form-check-input" type="radio" name="flexRadioDefault" id="gridRadios1" defaultValue="option1" onchange="checkbutton()">
+                    <label class="form-check-label" for="gridRadios1">
+                        Male
+                      </label>
+
+                  </div>&nbsp;
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault"id="gridRadios2" defaultValue="option2" onchange="check()">
+                    <label class="form-check-label" for="gridRadios2">
+                        Female
+                      </label>
+                  </div>
+            </div>
+          <div class=" first">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-building"></i> </span>&nbsp;
+            </div>
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="check1" name="option1" value="something">
+                      <label class="form-check-label" for="check1">riding</label>
+                    </div>&nbsp;
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">
+                      <label class="form-check-label" for="check2">kabbdi</label>
+                    </div>&nbsp;
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input"id="check3" name="option3" value="something">
+                      <label class="form-check-label">cricket</label>
+                    </div>&nbsp;
+
+            </div>
+            <div class="last">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-building"></i> </span>&nbsp;
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="check4" name="option4" value="something">
+                    <label class="form-check-label" for="check1">Drwing</label>
+                  </div>&nbsp;
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="check5" name="option5" value="something">
+                    <label class="form-check-label" for="check2">Cooking</label>
+                  </div>&nbsp;
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="check6" name="option6" value="something">
+                    <label class="form-check-label">Shoping</label>
+                  </div>&nbsp;
+            </div>
+            <div class="form-group">
+                <button type="submit"  class="btn btn-primary btn-block" value="Sumbit" onclick="loginhandler()"> Sumbit </button>
+            </div>
+        </form>
+        </article>
+        </div>
+      </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+         <script src="index.js"></script>
+</body>
+</html>

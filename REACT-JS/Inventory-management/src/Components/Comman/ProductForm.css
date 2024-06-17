@@ -1,0 +1,40 @@
+/* Add custom styles for form elements */
+.form-label {
+    font-weight: bold;
+}
+
+.form-control {
+    border: 1px solid #ced4da;
+    /* Add border with light gray color */
+    border-radius: 0.25rem;
+    /* Add slight border radius */
+    padding: 0.375rem 0.75rem;
+    /* Add padding */
+}
+
+.error {
+    color: red;
+    /* Color error messages in red */
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    /* Add padding to buttons */
+    font-size: 1rem;
+    /* Set font size for buttons */
+    border-radius: 0.25rem;
+    /* Add slight border radius */
+}
+.react-datepicker-wrapper {
+width: 100%;
+    padding: 0;
+    border: 0;
+}
+
+/* Adjust layout for smaller screens */
+@media (max-width: 768px) {
+    .col-md-6 {
+        margin-bottom: 1rem;
+        /* Add spacing between columns on smaller screens */
+    }
+}

@@ -1,0 +1,107 @@
+SWAGGER
+
+Intro
+Swagger module is primarily provides tools use for generating API Documentation
+Swagger is an open-source framework that allows you to describe, produce, consume, and 
+visualize RESTful APIs. It provides a set of tools for designing, building, documenting, and 
+testing APIs, making the API development process more efficient and collaborative.
+
+Search  swagger.io
+https://swagger.io/
+
+Official Swagger Site 
+
+Header ==> Tools --> Click On (Swagger UI) --> Click On (Live Demo)
+
+Chack it How to Work Swagger and API Resonce in Document
+Note : Demo API Alredy Develops it just Responce Document Provided how to work it 
+Chack and click any 1 Sub Service and then See What will be the request , Responce , types 
+and Once you will click tray it Out and you will also send the request the server and exicuting it
+or you will get the Responce
+
+that means the using swagger othe this is it is use for Document purpose (Documentation)
+
+And Other One is also validate also send request and responce
+GET  -> /pet/findByStatus -> Finds Pets by status
+Click on --> Parameters (Try it out) --> status (sold) --> Click on Execute
+then see Responce also 
+
+same thing we can do using are Node js Project
+
+how we can do using nodejs Project and how we can create this UI using nodejs Project
+so we can direcly Chack our APIs throgh Swagger
+
+==> Set up Nodejs Backend APIs 
+First Create Nodejs Backend API Project
+
+install Packages
+npm install swagger-jsdoc --save   (default latesr version install)
+npm install swagger-jsdoc@6.0.0 --save    (specific version.. define) swagger-jsdoc
+
+npm i swagger-ui-express packge install
+
+
+==> Fisrt Dependency require in over Project
+const swaggerJsdoc = require("swagger-jsdoc");
+
+==> Second Dependency is 
+const swaggerUi = require("swagger-ui-express");
+
+this 2 Dependency require in over Project
+
+
+and Then We have write Defination code
+
+const options = {
+    // Project Name Title
+    definition = {
+        openapi: '3.0.0',                           // OAS 3.0
+        info: {
+            title: 'Nodejs API Project For Mysql',  // Swagger Title
+            version: '1.0.0',                       // Version 1.0.0
+            description: 'Description of your API', // Description Swagger
+        },
+    // Create Server for Run Project
+        servers: [
+            {
+            url: 'http://localhost:8099',            // Your Port Running Port
+            description: 'Development server',       // Server - Description
+            },
+        ],
+    };
+     apis: ["./src/v1/routes/*.js"],                 // we can Use API Path to the API routes folder Wise
+}
+
+const swaggerSpec = swaggerJsdoc(options);
+
+App.js File in this code require and use or define route for swagger 
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(option code file name));
+
+open Browser and http://localhost:8099/api-docs run this url
+
+
+Write Documentation
+
+Specific route Define 
+
+/**
+* @swagger
+* /:    (Repsific Route URL match)
+* get: 
+*    summary: This API is used to chack if get method is working or not (Get Method - Show URL Message Default)
+*    description: This API is  used to chack if get method is working or not (General description)
+*    responses: 
+*       200:
+*           description: To test get method  (Responce Descrioption)
+*/
+
+If this Document Test then Click on Try it out And Execute
+it will actully perform whatever things we will responce inside that perticular APIs
+
+Request URL Server Responce 
+code 200 , Detalis (responce body message) , Header
+
+
+
+

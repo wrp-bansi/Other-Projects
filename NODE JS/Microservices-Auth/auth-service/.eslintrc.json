@@ -1,0 +1,34 @@
+{
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "extends": [
+    "eslint:recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "rules": {
+    "camelcase": ["error", {"properties": "always"}],
+    "max-lines-per-function": ["error", { "max": 100 }], // Limit function length
+    "prefer-const": "error", // Enforce using const for variables that don't change
+    "consistent-return": "off", // Allow inconsistent return statements
+    "no-return-await": "off", // Allow return statements before await
+    "no-throw-literal": "error", // Disallow throwing literals, use Error objects instead
+    "indent": ["error", 2], // Enforce 2 space indentation
+    "quote-props": ["error", "as-needed"], // Only quote object properties when necessary
+    "no-unused-vars": ["error", {"args": "none"}], // Disallow unused variables, except function arguments
+    "no-multi-spaces": "error", // Disallow multiple spaces
+    "no-unused-expressions": "error", // Disallow unused expressions
+    "no-underscore-dangle": "off", // Allow underscores in variable names
+    "no-invalid-regexp": "error", // Disallow invalid regular expressions
+    "no-lonely-if": "error", // Disallow lonely if statements
+    "eqeqeq": "error", // Require strict equality ===
+    "no-multiple-empty-lines": "error", // Disallow multiple empty lines
+    "no-trailing-spaces": ["off", { "ignoreComments": true,"ignorePattern": "^\\s*const\\s+\\{.*?\\}\\s*=\\s*\\w+\\.\\w+;"  }],
+    "no-var": "error", // Disallow var, use let or const instead
+    "no-warning-comments": "warn" // Warn about TODO or FIXME comments
+
+  }
+}

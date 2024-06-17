@@ -1,0 +1,175 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <title>chat app</title>
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box;scroll-behavior: smooth;}
+    body {  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; display: grid; place-items:center; background-color: #ebebeb;  }
+.title{margin: 20px 0;}
+.main{border:8px solid #dddd; border-radius: 24px;overflow: hidden;}
+.name{display: flex;font-size: 32px; font-weight: 700; padding: 8px 16px; color: #777; background-color: #ebebeb;}
+.name > span {color: #bbb;}
+.name-input{font-size: 24px;font-weight: 700; color: #7e7e7e; flex-grow: 1; border: none; margin: 0px 12px; outline: none; background-color: #ebebeb;}
+.message-container{display: flex; flex-direction: column; background-color: #f6f6f6; width: 400px; height: 500px;overflow-y: scroll;overflow-x: hidden;}
+.message-left, .message-right{
+  list-style: none;
+  padding: 8px 12px;
+  margin: 12px;
+  max-width: 250px;
+  font-size: 18px;
+  word-wrap: break-word;
+}
+.message-left{border-radius: 20px 20px 20px 0px; align-self: flex-start; background-color: #fff; box-shadow: -2px 2px 4px #dcdcdc;}
+.message-right{border-radius: 20px 20px 0px 20px; align-self: flex-end; background-color: #2d2d2d; box-shadow: 2px 2px 4px #dcdcdc; color: #f6f6f6;}
+.message-left > p > span, .message-right > p > span{display: block; font-size:12px ; font-style: italic; margin-top: 4px;}
+.feedback{font-style: italic; font-size: 14px; padding: 0px 16px 16px 16px; color: #2d2d2d; text-align: center;}
+.message-form{display: flex; justify-content: space-between;width: 400px;}
+.message-input{flex-grow: 1; height: 48px;font-size: 16px;border: none;outline: none;padding: 0px 12px; background-color: #fff;}
+.send-button{height: 48px; font-size: 16px;border: none;padding: 0 20px; outline: none; background-color: #fff;cursor: pointer;}
+.v-divider{height: 48px; width: 2px;  background-color: #f6f6f6;}
+.clients-total{margin: 20px 0;color: #7e7e7e;}
+  </style>
+</head>
+<body>
+  <h1 class="title">Chat app</h1>
+  <div class="main">
+    <div class="name">
+      <span><i class="fa-regular fa-user"></i></span>
+      <input type="text" id="name-input" class="name-input" maxlength="20" value="anonymous">
+    </div>
+    <ul class="message-container" id="message-container">
+      <li class="message-left">
+        <p class="message">
+          lorem tttt
+          <span>time show in this</span>
+        </p>
+
+      </li>
+
+      <li class="message-right">
+        <p class="message">
+          lorem tttt
+          <span>time show in this</span>
+        </p>
+
+      </li>
+
+      <!-- <li class="message-feedback">
+        <p class="feedback" id="feedback">
+          lorem tttt typing
+        </p> -->
+
+      </li>
+    </ul>
+
+    <form id="message-form" class="message-form">
+      <input type="text" id="message-input" name="message" class="message-input">
+      <div class="v-divider"></div>
+      <button class="send-button" type="submit">send <span><i class="fa-regular fa-paper-plane"></i></span></button>
+    </form>
+
+
+
+  </div>
+  <h3 class="clients-total" id="clients-total">Total clients : 2</h3>
+
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js "></script>
+  <script >
+const socket=io("http://localhost:9000/")
+
+const clientstotal= document.getElementById('clients-total')
+const messageContainer = document.getElementById('message-container')
+const nameInput=document.getElementById('name-input')
+const messageForm=document.getElementById('message-form')
+const messageInput=document.getElementById('message-input')
+
+messageForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  sendMessage();
+});
+
+socket.on('client-total',(data)=>{
+clientstotal.innerText=`Total clients ${data} `
+})
+
+function sendMessage(){
+  if(messageInput.value==='') return
+
+
+  const data={
+    name:nameInput.value,
+    message:messageInput.value,
+    dateTime:new Date()
+  }
+  socket.emit('message',data)
+  addMessageToUi(true,data)
+  messageInput.value=''
+}
+
+socket.on('chat-message',(data)=>{
+  // console.log(data)
+
+  addMessageToUi(false,data)
+})
+
+function addMessageToUi(isownmessage,data){
+  clearFeedbackmsg()
+const element=`<li class=${isownmessage? "message-left" :"message-right"}>
+        <p class="message">
+         ${data.message}
+          <span>${data.name}  ${moment(data.dateTime).fromNow()}</span>
+        </p>
+        </li>`
+
+        messageContainer.innerHTML+= element
+        scrolToBottam()
+}
+
+function scrolToBottam(){
+  messageContainer.scrollTo(0,messageContainer.scrollHeight)
+}
+
+messageInput.addEventListener('focus',(e)=>{
+socket.emit('feedback',{
+  feedback:`${nameInput.value} is typing..`
+})
+})
+messageInput.addEventListener('keypress',(e)=>{
+  socket.emit('feedback',{
+  feedback:`${nameInput.value} is typing..`
+})
+})
+messageInput.addEventListener('blur',(e)=>{
+  socket.emit('feedback',{
+  feedback:''
+})
+})
+
+socket.on('feedback', (data)=>{
+  clearFeedbackmsg()
+const element=` <li class="message-feedback">
+        <p class="feedback" id="feedback">
+          ${data.feedback}
+        </p>`
+
+        messageContainer.innerHTML+=element
+})
+
+
+function clearFeedbackmsg(){
+  document.querySelectorAll('li.message-feedback').forEach(element=>{
+    element.parentNode.removeChild(element)
+  })
+}
+
+  </script>
+</body>
+</html>
