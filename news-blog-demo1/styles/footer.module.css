@@ -1,0 +1,9 @@
+.main{
+    font-family: "Poppins", sans-serif;
+color: var(white);
+
+}
+
+.none {
+    font-size: var(--bodyfont)
+}
